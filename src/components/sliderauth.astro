@@ -1,0 +1,44 @@
+---
+import VideoMonroe from "~/assets/monroevid.mp4";
+
+---
+
+<!-----
+    <video
+        slot="background"
+        class="object-cover h-200% w-screen"
+        autoplay
+        loop
+        muted
+        src="/src/assets/monroevid.mp4">
+    
+    </video>
+--- -->
+<style>
+    .video-text-container {
+    position: relative;
+    
+}
+#text-overlay {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Offset to center */
+    text-align: center; /* Center text horizontally */
+    text-shadow: 2px 2px 8px rgb(0, 0, 0);
+}
+
+
+</style>
+<div class="video-text-container">
+    
+    <video
+        slot="background"
+        class="object-cover h-180% sm:h-220% sm:w-screen"
+        autoplay
+        loop
+        muted
+        src={VideoMonroe}>
+    </video>
+    <div id="text-overlay" class="text-3xl font-bold text-white">$MONROE</div>
+</div>

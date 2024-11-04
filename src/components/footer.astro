@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon/components";
+import type { NavItem } from "~/types";
+
+const navItems: Array<NavItem> = [
+  { title: "Buy", url: "https://jup.ag/swap/SOL-4j2gUEmfbSAacvSSd6yXo8yEzXCAUVeoXrqLVV3apump" },
+  { title: "Chart", url: "https://dexscreener.com/solana/6vjgblscr9hhotmcrcpkpnmcz3rbyackzcuqx5zkvaax" },
+  { title: "X", url: "https://x.com/WINTERARCSOLANA" },
+  { title: "Telegram", url: "https://t.me/winterarcsolana" }
+];
+---
+
+<footer class="relative flex flex-col w-screen h-24 items-center justify-center">
+  <div class="absolute inset-0 overflow-hidden bg-zinc-900">
+    <ul class="flex place-items-center justify-between sm:justify-center grow sm:w-8/12 mx-5 sm:mx-auto mt-4 gap-2 cursor-pointer">
+      {
+        navItems.map(({ title, url }) => (
+          <li class="group">
+            <a class="grow text-sm p-3 text-gray-400 font-medium transition duration-300 hover:text-white hover:underline hover:decoration-white hover:decoration-2" href={url} target="_blank" rel="noopener noreferrer">
+              {title}
+            </a>
+            <span
+            class="absolute -bottom-1 left-0 w-0 transition-all duration-300 h-0.5 bg-indigo-600 group-hover:w-full"
+          ></span>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="place-self-center text-xs text-gray-500 mt-5"> Made for $WINTER ARC CTO</p>
+  </div>
+</footer>

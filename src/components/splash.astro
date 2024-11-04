@@ -1,0 +1,92 @@
+---
+import { Image } from "astro:assets";
+import astronautImage from "~/assets/winter-cover.jpg";
+import pumpfunImage from "~/assets/signture.png";
+import Header from "~/components/header.astro";
+import type { FooterLink } from "~/types";
+import { Icon } from "astro-icon/components";
+import Starfield from "./fallinglights.astro";
+
+
+const links: Array<FooterLink> = [
+  {
+    url: "https://x.com/WINTERARCSOLANA",
+    description: "$WINTER on Twitter",
+    icon: "fa-brands:twitter",
+  },
+  {
+    url: "https://t.me/winterarcsolana",
+    description: "$WINTER Telegram",
+    icon: "fa-brands:telegram",
+  },
+];
+---
+<style>
+@media (max-width: 640px) {
+  /* CSS styles for screens smaller than or equal to 640px */
+  section {
+      height: fit-content;
+    }
+}
+@media (min-width: 640px) {
+  /* CSS styles for screens larger than or equal to 640px */
+  section {
+    height: 100%;
+  }
+}
+</style> 
+
+<section class="relative w-screen h-screen bg-slate-900 sm:h-full sm:p-0">
+  <Header />
+  <Starfield/>
+  <div class="relative grid h-screen sm:w-screen place-items-center bg-[url('/src/assets/winter-bg.webp')] object-contain md:bg-cover bg-no-repeat bg-center sm:grid-cols-2">
+    
+      <article
+        class="flex flex-col w-11/12 md-6/12 text-center gap-0 sm:gap-4 sm:self-auto sm:justify-center"
+      >
+      <div
+      id="signature"
+      class="w-full max-w-10/12 h-full self-center sm:w-36/44 sm:self-auto sm:justify-self-center pb-10"
+    >
+        <h1 class="text-8xl">Winter Arc</h1>
+        <div
+          class="text-white font-bold tracking-tighter text-sm md:text-2xl mb-5"
+        >
+        The coldest token on solana
+          <br /> 
+          <br />
+        </div>
+      </div>
+          <p class="w-10/12 md:w-8/12 m-auto p-7"> 
+            This is your season to <span class="text-primary">grind like never before.</span> Get up, <span class="text-primary">get focused,</span> and let's get it done. <br /> <span class="text-primary">Winter is comming!</span>
+          </p>
+          
+        
+        <div class="icons w-60 sm:w-8/12 md:w-6/12 lg:w-5/12 h-auto flex self-center items-center bg-transparent">
+          <a href="https://jup.ag/swap/SOL-4j2gUEmfbSAacvSSd6yXo8yEzXCAUVeoXrqLVV3apump" target="_blank" rel="noopener noreferrer" class="md:hidden w-auto h-full bg-slate-900 rounded-full text-xs text-white font-bold transition duration-500 ease-in-out transform hover:-translate-y-0.5 hover:scale-105 mx-auto p-3 sm:p-3">
+            BUY
+          </a>
+          <a href="https://jup.ag/swap/SOL-4j2gUEmfbSAacvSSd6yXo8yEzXCAUVeoXrqLVV3apump" target="_blank" rel="noopener noreferrer" class="hidden md:block w-auto h-full bg-slate-900 rounded-full text-sm text-white font-bold transition duration-500 ease-in-out transform hover:-translate-y-0.5 hover:scale-105 mx-auto p-3 sm:p-3">
+            BUY WINTER
+          </a>
+          <ul class="flex grid-cols-2 gap-0 sm:grid-cols-2">
+            {
+              links.map((link) => (
+                <li>
+                  <a
+                    class="flex size-14 items-center justify-center rounded-full px-3 py-3 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-102"
+                    href={link.url} target="_blank" rel="noopener noreferrer"
+                  >
+                    <span class="sr-only">{link.description}</span>
+                    <Icon class="size-full" name={link.icon} />
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </article>
+      
+    </div>
+  </div>
+</section>

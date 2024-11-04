@@ -1,0 +1,56 @@
+---
+import { Image } from "astro:assets";
+import winterImageb2 from "~/assets/batman.jpg";
+---
+
+<section class="grid place-items-center place-content-center w-5/5 h-screen bg-slate-950">
+    <div class="flex flex-col place-content-center text-center w-5/5  md:w-4/5 max-w-screen-md rounded pt-10 mx-auto sm:m-10">
+        <div class="flex place-content-center mx-auto mb-10">
+            
+            <Image 
+                src={winterImageb2} alt="Foto de perfil" 
+                class="secondary-image w-5/12 sm:w-5/12 md:w-6/12 object-cover rounded-lg shadow-lg mt-3 mx-1" />
+            
+        </div>
+        <h2 class="subtitle place-self-center text-xl sm:text-2xl font-bold mb-3 text-left text-white">What is the winter arc?</h2>  
+        <div class="flex flex-col place-self-center text-left  w-4/5 mb-7 [&>h4]:text-white [&>h4]:tracking-tighter">
+            <h4 class="main-text text-sm md:text-base mx-3">A challenge where we use the coldest and darkest days to visualize, re-focus, and reach our commitments and desitions. Challenge yourself to become harder, stronger a focused version of yourself. $Winter is a community run token on the solana blockchain. </h4>
+        </div>
+        <div class="secondary-text w-4/5 sm:w-4/5 place-self-center text-xs md:text-sm text-left mb-5 text-white italic tracking-tight">
+            Winter arc is upon us, and now is the time were we set goals and gain dicipline.
+        </div>
+        <div class="hidden sm:block secondary-text text-xs sm:text-base mx-16 mb-5 text-white tracking-wide">
+            "A time where every man must face the mental and physical challenges of winter. A time to put your head down and get things done."
+        </div>
+        <div class="secondary-text text-xs sm:text-sm mb-10 text-white tracking-wide">
+            Winter Contract Address: <br/> <span class="select-all ca sm:text-sm">4j2gUEmfbSAacvSSd6yXo8yEzXCAUVeoXrqLVV3apump </span>
+        </div>
+    </div> 
+</section>
+
+<style>
+    @keyframes appear {
+        from {
+            opacity: 0;
+            scale: 0.5;
+        }
+        to {
+            opacity: 1;
+            scale: 1;
+        }
+    }
+
+    .secondary-image, .subtitle, .main-text, .secondary-text {
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 10% cover 10%;
+    }
+
+    @media (max-width: 450px) {
+  /* Styles for small screens */
+  .ca {
+      font-size: 11px;
+  }
+}
+</style>
+

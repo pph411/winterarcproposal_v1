@@ -1,0 +1,117 @@
+---
+import { Image } from "astro:assets";
+import PicsMonroe from "~/assets/m1.jpg";
+import PicsMonroe4 from "~/assets/m4.jpg";
+import PicsMonroe7 from "~/assets/m7.jpg";
+import PicsMonroe11 from "~/assets/m11.jpg";
+import PicsMonroe14 from "~/assets/m14.jpg";
+import PicsMonroe5 from "~/assets/m5.jpg";
+import PicsMonroe15 from "~/assets/m15.jpg";
+import ScrollGallery from "~/components/scrollgallery.astro";
+import SliderAuth from "~/components/sliderauth.astro";
+import BioGraph from "~/components/biograph.astro"
+
+
+const widths = [320, 480];
+const sizes = "(min-width: 280px) 40vw, 56vw";
+---
+
+  <style> 
+.slider {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.slider .slide-track {
+    display: flex;
+    animation: scroll 40s linear infinite;
+    -webkit-animation: scroll 40s linear infinite;
+    width: calc(320px * 14);
+    white-space: wrap;
+}
+
+.slider .slide {
+
+    overflow: hidden
+}
+
+.slider .slide img {
+    width: 100%;
+    height: 100%;
+    transition: all 700ms ease-in-out;
+
+}
+.slider .slide img:hover {
+    transform: scale(1.1);
+    opacity: 0.95;
+    cursor: pointer;
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+    100% {
+        -webkit-transform: translateX(calc(-200px * 7));
+        transform: translateX(calc(-200px * 7));
+    }
+}
+  </style>
+
+  <!-- HTML -->
+<div class="slider">
+        <div class="slide-track">
+          <div class="slide h-[200px] sm:h-[350px]">
+              <Image src={PicsMonroe} alt="" />
+          </div>
+          <div class="slide h-[200px] sm:h-[350px]">
+              <Image src={PicsMonroe4} alt="" />
+          </div>
+          <div class="slide h-[200px] sm:h-[350px]">
+              <Image src={PicsMonroe7} alt="" />
+          </div>
+          <div class="slide h-[200px] sm:h-[350px]">
+              <Image src={PicsMonroe11} alt="" />
+          </div>
+          <div class="slide h-[200px] sm:h-[350px]">
+          <Image src={PicsMonroe14} alt="" />
+          </div>
+          <div class="slide h-[200px] sm:h-[350px]">
+              <Image src={PicsMonroe5} alt="" />
+          </div>
+          <div class="slide h-[200px] sm:h-[350px]">
+              <Image src={PicsMonroe15} alt="" />
+          </div>
+
+        <div class="slide h-[200px] sm:h-[350px]">
+            <Image src={PicsMonroe} alt="" />
+        </div>
+        <div class="slide h-[200px] sm:h-[350px]">
+            <Image src={PicsMonroe4} alt="" />
+        </div>
+        <div class="slide h-[200px] sm:h-[350px]">
+            <Image src={PicsMonroe7} alt="" />
+        </div>
+        <div class="slide h-[200px] sm:h-[350px]">
+            <Image src={PicsMonroe11} alt="" />
+        </div>
+        <div class="slide h-[200px] sm:h-[350px]">
+        <Image src={PicsMonroe14} alt="" />
+        </div>
+        <div class="slide h-[200px] sm:h-[350px]">
+            <Image src={PicsMonroe5} alt="" />
+        </div>
+        <div class="slide h-[200px] sm:h-[350px]">
+            <Image src={PicsMonroe15} alt="" />
+        </div>
+</div>
+
+    <SliderAuth />
+    <ScrollGallery />
+    <BioGraph />
+
+</ContentSection>

@@ -1,0 +1,92 @@
+---
+import "@fontsource-variable/inter";
+import Compatibility from "~/components/compatibility.astro";
+
+import Footer from "~/components/footer.astro";
+import Header from "~/components/header.astro";
+import Intro from "~/components/intro.astro";
+import Section2 from "~/components/s2winter.astro";
+
+import Splash from "~/components/splash.astro";
+import HeroImage from "~/components/hero-image.astro";
+import "~/styles/index.css";
+
+import Biograph from "~/components/biograph.astro";
+import ContentSection from "~/components/content-section.astro";
+import WinterPw from "~/components/winter-pw.astro";
+
+const { generator, site } = Astro;
+const image = new URL("~/assets/winter-logo.jpg", site);
+const description =
+  "Winter ARC Community Token.";
+---
+
+<!doctype html>
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/src/assets/winter-logo.jpg" type="image/svg+xml" />
+    <meta name="generator" content={generator} />
+
+    <title>WINTER ARC Token</title>
+    <meta name="description" content={description} />
+
+    <!-- social media -->
+    <meta property="og:title" content="Astro" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={site} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- initialize theme -->
+    <script is:inline>
+      const themeSaved = localStorage.getItem("theme");
+
+      if (themeSaved) {
+        document.documentElement.dataset.theme = themeSaved;
+      } else {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+      }
+
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (!localStorage.getItem("theme")) {
+            document.documentElement.dataset.theme = event.matches
+              ? "dark"
+              : "light";
+          }
+        });
+    </script>
+  </head>
+  <body
+    class="h-full overflow-x-hidden bg-slate-950 text-default text-base selection:bg-secondary selection:text-white"
+  >
+    <main class="snap-y snap-mandatory relative w-full h-screen overflow-x-hidden scroll-m-0">
+      
+      <div class="snap-center">
+        <Splash />
+      </div>
+      <div class="snap-center">
+        <Section2/>
+      </div>
+      <div class="snap-center">
+        <Biograph/>
+      </div>
+      <div class="snap-center">
+        <ContentSection/>
+      </div>
+      <div class="snap-center">
+        <WinterPw/>
+      </div>
+      <div class="snap-center">
+        <Footer />
+      </div>
+    </main>
+  </body>
+</html>

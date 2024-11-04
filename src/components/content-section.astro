@@ -1,0 +1,59 @@
+---
+import { Image } from "astro:assets";
+import PicsWinter from "~/assets/winter-mobile2.jpg";
+import Winterarc from "./winterarc.astro";
+---
+<!--
+    <section class="grid place-items-center w-screen h-screen bg-[url('/src/assets/winter-mobile1.1.jpg')] bg-fixed bg-clip-border bg-center bg-cover bg-no-repeat">
+        <div class="flex flex-col items-center text-center w-4/6 h-4/6 sm:w-auto max-w-screen-md rounded pb-5 mb-10 mx-auto bg-none">
+            <Winterarc/>
+            <div class="flex flex-col w-5/6 sm:flex-row mx-auto text-center text-white mb-10">
+                <h3 class="self-center sm:self-end text-2xl sm:text-4xl md:text-5xl font-bold mb-3 sm:-mb-5 md:mb-5 p-5 sm:p-0">TOKENOMICS</h3> 
+                <div class="w-4/5 sm:w-5/5 text-xs sm:text-base md:text-lg text-left ml-5 sm:ml-10 sm:-mb-5 md:mb-5 italic leading-loose tracking-tight">
+                    0% TAX <br/>
+                    0% TEAM ALLOCATION <br/>
+                    1B TOKEN SUPPLY <br/>
+                    MINT REVOKED <br/>
+                    100% COLDEST COMMUNITY
+                </div>
+                
+            </div>
+        </div> 
+    </section>
+-->
+
+<section class="grid place-items-center w-screen h-screen bg-[url('/src/assets/winter-mobile1.1.jpg')] sm:bg-[url('/src/assets/winter-mobile1.2.jpg')]  bg-fixed bg-clip-border bg-center sm:bg-bottom bg-cover sm:bg-contain bg-no-repeat">
+    <div class="flex flex-col items-center text-center w-4/6 h-4/6 sm:w-auto max-w-screen-md rounded pb-5 mb-10 mx-auto bg-none">
+        <Winterarc/>
+        <div class="flex flex-col w-5/6 sm:flex-row mx-auto text-center text-white mb-10 fadeinup ">
+            <h3 class="subtitle self-center sm:self-end text-4xl sm:text-4xl md:text-5xl font-bold mb-3 sm:-mb-5 md:mb-5 p-5 sm:p-0">TOKENOMICS</h3> 
+            <div class="main-text w-4/5 sm:w-5/5 text-sm sm:text-base md:text-lg text-left ml-5 sm:ml-10 sm:-mb-5 md:mb-5 italic leading-loose tracking-tight">
+                0% TAX <br/>
+                0% TEAM ALLOCATION <br/>
+                1B TOKEN SUPPLY <br/>
+                MINT REVOKED <br/>
+                100% COLDEST COMMUNITY
+            </div>
+            
+        </div>
+    </div> 
+</section>
+
+<style>
+    @keyframes appear {
+        from {
+            opacity: 0;
+            clip-path: inset(100% 100% 0 0);
+        }
+        to {
+            opacity: 1;
+            clip-path: inset(0 0 0 0);
+        }
+    }
+
+    .secondary-image, .subtitle, .main-text {
+        animation: appear linear;
+        animation-timeline: view();
+        animation-range: entry 0% cover 40%;
+    }
+</style>

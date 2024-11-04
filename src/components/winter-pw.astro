@@ -1,0 +1,93 @@
+---
+import Winterarc from "./winterarc.astro";
+
+---
+
+<section class="grid place-items-center w-screen h-screen bg-[url('/src/assets/winter-mobile3.jpg')] bg-fixed bg-clip-border bg-center bg-cover bg-no-repeat">
+    
+    <div class="flex flex-col items-center text-center w-5/6 h-4/6 sm:w-auto max-w-screen-md rounded pb-5 mb-10 mx-auto bg-none">
+        <Winterarc/>
+        <div class="flex flex-col w-6/6 mx-auto text-center text-white backdrop-blur-sm bg-white/10 backdrop-grayscale rounded-md mb-10 p-3">
+            <h3 class="subtitle self-center text-2xl sm:text-4xl md:text-5xl font-bold mb-10 p-5 sm:drop-shadow-lg">RULES</h3> 
+            <article id="scrolling-container" class="main-text flex flex-col w-6/6 h-20 mx-auto text-center text-white mb-10 overflow-y-hidden [&>p]:text-5xl [&>p]:font-black scroll-smooth snap-y snap-mandatory scroll-m-0 [&>p]:snap-center [&>p]:h-32 [&>p]:drop-shadow-lg [&>p]:leading-10 [&>p]:mb-5">
+                <p class="pt-5">Set a goal</p>
+                <p>Create a schedule</p>
+                <p>Cut distractions</p>
+                <p>Workout & Eat healty</p>
+                <p>Record your plans</p>
+                <p>Keep dicipline</p>
+                <p class="pt-1 sm:pt-0">Sleep properly</p>
+                <p>Cultivate your mind</p>
+                <p>Learn a skill</p>
+                <p>Have conviction</p>
+                <p>Lock in</p>
+                <p>Focus</p>
+                <p>Focus</p>
+                <p>Focus</p>
+                <p>Focus</p>
+                
+            </article>
+            
+            <p class="flex justify-self-center self-center text-md font-light drop-shadow-xl">We can do it.</p>
+        </div>
+      </div> 
+      <a href="https://x.com/i/communities/1840457780722876815" target="_blank" rel="noopener noreferrer" class="flex flex-col w-6/6 mx-auto text-lg text-center text-white backdrop-blur-sm bg-white/10 backdrop-grayscale rounded-lg mb-10 p-3 cursor-pointer hover:bg-white/70 hover:text-white">
+      Community
+      </a>
+</section>
+
+<style>
+  @keyframes appear {
+        from {
+            opacity: 0;
+            scale: 0.5;
+        }
+        to {
+            opacity: 1;
+            scale: 1;
+        }
+  }
+
+  .secondary-image, .subtitle, .main-text {
+      animation: appear linear;
+      animation-timeline: view();
+      animation-range: entry 0% cover 40%;
+  }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("scrolling-container");
+  let index = 0;
+
+  // Use optional chaining and nullish coalescing to handle potential null or undefined values
+  const items = container?.querySelectorAll("p") ?? [];
+  let itemHeight = 0;
+
+  // Calculate the average item height
+  items.forEach(item => {
+      itemHeight += item.offsetHeight;
+    });
+  itemHeight /= items.length;
+  function autoScroll() {
+    index++;
+
+    if (index >= items.length) {
+      index = 0;
+      container?.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      container?.scrollTo({ top: index * itemHeight, behavior: "smooth" });
+    }
+  }
+
+  setInterval(autoScroll, 1500);
+});
+</script>
+
+
+
+
+
+
+
+    <!-- "te amo mas", no es que quiera decir que te amo mas de lo que tu a mi, te quiero decir que te amo mas que cualquiera de los malos dias que hemos tenido y los que nos van a faltar, te amo mas que los problemas entre nosotros, Te amo mas que las peleas, Te amo mas que cualquier defecto que crees tener, te amo mas que a mi mismo y tambien me refiero a que te amo mas que a cualquier cosa. pd:Yo te amo mas.   -->
